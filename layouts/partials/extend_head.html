@@ -1,0 +1,8 @@
+{{/*
+  PaperMod가 <head> 끝에서 include 하는 확장 훅.
+  2단계 광고 활성화 시 Google AdSense 스크립트를 여기 로드.
+*/}}
+{{- if and site.Params.ads.enabled site.Params.ads.client -}}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.Params.ads.client }}"
+        crossorigin="anonymous"></script>
+{{- end -}}

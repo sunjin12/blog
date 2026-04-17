@@ -1,0 +1,16 @@
+{{/*
+  글 본문 위에 노출되는 광고 슬롯.
+  hugo.toml 의 [params.ads] 에서 enabled=true, client/topSlot 채우면 활성.
+  단일 포스트 페이지에서만 렌더 (.IsPage) — 목록/홈에서는 숨김.
+*/}}
+{{- if and .IsPage site.Params.ads.enabled site.Params.ads.client site.Params.ads.topSlot -}}
+<div class="ad ad-top" style="margin: 1rem 0; text-align:center;">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{{ site.Params.ads.client }}"
+       data-ad-slot="{{ site.Params.ads.topSlot }}"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{{- end -}}

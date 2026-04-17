@@ -1,0 +1,15 @@
+{{/*
+  글 본문 아래에 노출되는 광고 슬롯.
+  단일 포스트 페이지에서만 렌더.
+*/}}
+{{- if and .IsPage site.Params.ads.enabled site.Params.ads.client site.Params.ads.bottomSlot -}}
+<div class="ad ad-bottom" style="margin: 1rem 0; text-align:center;">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{{ site.Params.ads.client }}"
+       data-ad-slot="{{ site.Params.ads.bottomSlot }}"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{{- end -}}

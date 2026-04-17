@@ -1,0 +1,135 @@
+baseURL = "https://sunjin12.github.io/blog/"
+title = "Blog"
+theme = "PaperMod"
+
+defaultContentLanguage = "ko"
+defaultContentLanguageInSubdir = false
+hasCJKLanguage = true
+
+enableRobotsTXT = true
+enableInlineShortcodes = true
+enableEmoji = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+pagination.pagerSize = 10
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[languages]
+  [languages.ko]
+    languageName = "한국어"
+    languageCode = "ko-KR"
+    weight = 1
+    title = "Blog"
+    [languages.ko.params]
+      description = "개인 블로그"
+    [languages.ko.params.homeInfoParams]
+      Title = "안녕하세요 👋"
+      Content = "블로그에 오신 것을 환영합니다."
+    [[languages.ko.menu.main]]
+      identifier = "posts"
+      name = "글"
+      url = "/posts/"
+      weight = 10
+    [[languages.ko.menu.main]]
+      identifier = "about"
+      name = "소개"
+      url = "/about/"
+      weight = 20
+    [[languages.ko.menu.main]]
+      identifier = "search"
+      name = "검색"
+      url = "/search/"
+      weight = 30
+
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-US"
+    weight = 2
+    title = "Blog"
+    [languages.en.params]
+      description = "Personal blog"
+    [languages.en.params.homeInfoParams]
+      Title = "Hi there 👋"
+      Content = "Welcome to my blog."
+    [[languages.en.menu.main]]
+      identifier = "posts"
+      name = "Posts"
+      url = "/posts/"
+      weight = 10
+    [[languages.en.menu.main]]
+      identifier = "about"
+      name = "About"
+      url = "/about/"
+      weight = 20
+    [[languages.en.menu.main]]
+      identifier = "search"
+      name = "Search"
+      url = "/search/"
+      weight = 30
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  env = "production"
+  defaultTheme = "auto"
+  disableThemeToggle = false
+
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowRssButtonInSectionTermList = true
+  ShowWordCount = true
+  ShowToc = true
+  TocOpen = false
+  ShowFullTextinRSS = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  displayFullLangName = true
+
+  [params.assets]
+    disableHLJS = true
+    disableFingerprinting = false
+    favicon = "/favicon.ico"
+    # customCSS = ["css/custom.css"]
+    # customJS  = ["js/custom.js"]
+
+  # 2단계 확장: 광고 슬롯 (enabled=true 로 바꾸면 활성)
+  [params.ads]
+    enabled = false
+    client = ""      # e.g. "ca-pub-XXXXXXXXXXXXXXXX"
+    topSlot = ""     # AdSense slot ID (본문 위)
+    bottomSlot = ""  # AdSense slot ID (본문 아래)
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
